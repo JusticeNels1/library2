@@ -5,24 +5,39 @@
 
 body {
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 
+div.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
 
 div.sidebar {
     grid-column: 1 / 2;
     display: grid;
     height: 100vh;
-    width: 400px;
     background-color: bisque;
     border: 2px solid black;
 }
 
-div.container {
+div.books {
     grid-column: 2 / 3;
-    height: 200px;
-    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    height: 100%;
     background-color: bisque;
     border: 2px solid black;
+}
+
+div.card {
+    background-color: brown;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+li {
+    list-style: none;
 }

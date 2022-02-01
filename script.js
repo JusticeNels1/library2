@@ -25,10 +25,26 @@ const createBook = (info) => {
 }
 
 function addBook (book) {
-    const container = document.querySelector('.container')
-    let heading = document.createElement('h1')
-    let div = document.createElement('div')
+    const book_container = document.querySelector('.books')
+    const heading = document.createElement('h1')
+    const info = document.createElement('ol')
+    let card = document.createElement('div')
+
     heading.innerText = book.title
-    div.innerText = `By: ${book.author}|| Pages: ${book.pages}||gi Read: ${book.read}`
-    container.appendChild(div)
+
+    for (const key in book) {
+        if (key == 'title') {
+            continue
+        }
+        const element = book[key];
+        const li = document.createElement('li')
+        li.innerText = `${key}: ${element}`
+        info.appendChild(li)
+    }
+    card.className = 'card'
+    
+    card.appendChild(heading)
+    card.appendChild(info)
+    // card.innerText = `By: ${book.author}|| Pages: ${book.pages}||Read: ${book.read}`
+    book_container.appendChild(card)
 }
