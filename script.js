@@ -1,11 +1,14 @@
 let book_info = document.querySelectorAll('.sidebar input')
 let submit = document.querySelector('.add')
 
-function Book ([title,author,pages,read]) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+
+class Book {
+    constructor ([title,author,pages,read]) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
 }
 
 submit.addEventListener('click', (e) => {
