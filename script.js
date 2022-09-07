@@ -1,5 +1,5 @@
 let book_info = document.querySelectorAll('.sidebar input')
-let submit = document.querySelector('.add')
+let submitBook = document.querySelector('.add')
 
 
 class Book {
@@ -11,12 +11,22 @@ class Book {
     }
 }
 
-submit.addEventListener('click', (e) => {
+// submitBook.addEventListener('click', (e) => {
+//     console.log(book_info)
+//     createCard(createBook(book_info))
 
-    addBook(createBook(book_info))
+// })
 
-})
+// book_info.forEach(ele =>{
+//     ele.setCustomValidity('');
+//     // ele.checkValidity();
 
+//     ele.addEventListener('input',() => {
+
+//         console.log(ele.checkValidity())
+
+//     })
+// })
 const createBook = (info) => {
     const new_book = []
 
@@ -27,11 +37,11 @@ const createBook = (info) => {
     return new Book(new_book)
 }
 
-function addBook (book) {
+function createCard (book) {
+    const card = document.createElement('div')
     const book_container = document.querySelector('.books')
     const heading = document.createElement('h1')
     const info = document.createElement('ol')
-    let card = document.createElement('div')
 
     heading.innerText = book.title
 
